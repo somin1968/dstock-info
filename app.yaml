@@ -1,0 +1,19 @@
+# application: dstock-portal
+# version: beta
+runtime: go112
+
+handlers:
+- url: /(.+)\.(txt|css|js|png|svg|jpg|gif|eot|ttf|woff)
+  static_files: dist/\1.\2
+  upload: dist/(.+)
+  secure: always
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+- url: /(.+)?
+  static_files: dist/index.html
+  upload: dist/index\.html
+  secure: always
+  http_headers:
+    Strict-Transport-Security: max-age=31536000; includeSubDomains
+    X-Frame-Options: DENY

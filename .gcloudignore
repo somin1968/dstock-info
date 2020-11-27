@@ -1,0 +1,11 @@
+.DS_Store
+.gcloudignore
+.gitattributes
+.gitignore
+.go-version
+app.yaml
+package.json
+package-lock.json
+
+ng
+node_modules

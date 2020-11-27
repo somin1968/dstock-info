@@ -1,0 +1,89 @@
+<div class="fullHeight d-flex flex-column justify-content-between">
+  <div class="navTop d-flex justify-content-center align-items-end">
+    <div class="navBtn" (mouseover)="btnOnMouseover('product')" (mouseleave)="btnOnMouseleave('product')">
+      <span>PRODUCT</span>
+
+      <div class="strike" [ngClass]="{ hover: productIsVisible }"></div>
+
+      <div class="submenu text-center" [ngClass]="{ show: productIsVisible, expand: productCategoriesIsVisible }" (mouseleave)="btnOnMouseleave('product')">
+        <div class="viewAll text-center"><span (mouseover)="cancelTimeout(); productCategoriesIsVisible = true">View All</span></div>
+
+        <div class="productLinks" [ngClass]="{ show: productCategoriesIsVisible }">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item"><a href="http://www.decaltokyo.jp/">Furniture</a></li>
+            <li class="list-inline-item"><a href="http://www.decaltokyo.jp/">Chair</a></li>
+            <li class="list-inline-item"><a href="http://www.decaltokyo.jp/">Highchair</a></li>
+            <li class="list-inline-item"><a href="http://www.decaltokyo.jp/">Stacking</a></li>
+            <li class="list-inline-item"><a href="http://www.decaltokyo.jp/">Tables</a></li>
+          </ul>
+
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item"><a href="http://www.decaltokyo.jp/">Lighting</a></li>
+            <li class="list-inline-item"><a href="http://www.decaltokyo.jp/">Ceiling</a></li>
+            <li class="list-inline-item"><a href="http://www.decaltokyo.jp/">Table</a></li>
+            <li class="list-inline-item"><a href="http://www.decaltokyo.jp/">Floor</a></li>
+            <li class="list-inline-item"><a href="http://www.decaltokyo.jp/">Wall</a></li>
+          </ul>
+
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item"><a href="http://www.decaltokyo.jp/">Other</a></li>
+            <li class="list-inline-item"><a href="http://www.decaltokyo.jp/">Artwork</a></li>
+            <li class="list-inline-item"><a href="http://www.decaltokyo.jp/">Info</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-between" style="height: 100%;">
+    <div class="navLeft d-flex flex-column justify-content-center align-items-end">
+      <div class="navBtn" (mouseover)="btnOnMouseover('foodService')" (mouseleave)="btnOnMouseleave('foodService')">
+        <span>Food Service</span>
+
+        <div class="strike" [ngClass]="{ hover: foodServiceIsVisible }"></div>
+      </div>
+    </div>
+
+    <div class="mainContainer">
+      <div id="product" [ngClass]="{ show: productIsVisible }">
+        <div class="logo"><img src="/assets/product_logo.png"></div>
+
+        <div class="house" [ngClass]="{ reverse: productCategoriesIsVisible }"><img src="/assets/product_house.png"></div>
+      </div>
+
+      <div id="foodService" [ngClass]="{ show: foodServiceIsVisible }" (mouseover)="cancelTimeout()" (mouseleave)="foodServiceIsVisible = false">
+        <a class="d-flex flex-column justify-content-center align-items-center" href="http://www.nanaichi.shop/"><img src="/assets/foodservice_beast.png"></a>
+      </div>
+
+      <div id="works" [ngClass]="{ show: worksIsVisible }" (mouseover)="cancelTimeout()" (mouseleave)="worksIsVisible = false">
+        <a class="d-flex flex-column justify-content-center align-items-center" href="https://www.dstock.website/"><img src="/assets/works_chairs.png"></a>
+      </div>
+
+      <div id="houseOf" [ngClass]="{ show: houseOfIsVisible }" (mouseover)="cancelTimeout()" (mouseleave)="houseOfIsVisible = false">
+        <a class="d-flex flex-column justify-content-center align-items-center" href><img src="/assets/houseof_man_and_house.png"></a>
+      </div>
+    </div>
+
+    <div class="navRight d-flex flex-column justify-content-center align-items-start">
+      <div class="navBtn" (mouseover)="btnOnMouseover('works')" (mouseleave)="btnOnMouseleave('works')">
+        <span>WORKS</span>
+
+        <div class="strike" [ngClass]="{ hover: worksIsVisible }"></div>
+
+        <div class="submenu d-flex flex-column justify-content-center align-items-center" [ngClass]="{ show: worksIsVisible }">
+          <div class="logo"><img src="/assets/works_logo.png"></div>
+
+          <div class="text-center mt-2">Product Design</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="navBottom d-flex justify-content-center align-items-start">
+    <div class="navBtn" (mouseover)="btnOnMouseover('houseOf')" (mouseleave)="btnOnMouseleave('houseOf')">
+      <span>HOUSE of</span>
+
+      <div class="strike" [ngClass]="{ hover: houseOfIsVisible }"></div>
+    </div>
+  </div>
+</div>
